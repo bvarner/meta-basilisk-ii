@@ -1,3 +1,6 @@
+# Base this image on core-image-minimal
+include recipes-core/images/core-image-minimal.bb
+
 SUMMARY = "An image for booting straight to Basilisk II"
 HOMEPAGE = "http://bvarner.github.io"
 LICENSE = "MIT"
@@ -5,16 +8,13 @@ LICENSE = "MIT"
 IMAGE_FEATUREs += "splash"
 IMAGE_LINGUAS = "en-us"
 
-inherit core-image
-
-DEPENDS += "bcm2835-bootfiles"
-
 DISTRO_FEATURES_remove = "opengl"
 DISTRO_FEATURES_remove = "directfb"
 
-#SPLASH = "plymouth"
+#IMAGE_FEATURES += "tools-sdk"
 
-CORE_OS = " \
+IMAGE_INSTALL += " \
+	kernel-modules \
     tzdata \
     bzip2 \
     devmem2 \
@@ -25,13 +25,9 @@ CORE_OS = " \
     zip \
     unzip \
     basilisk-ii \
-    pulseaudio \
-"
-
-#IMAGE_FEATURES += "tools-sdk"
-
-IMAGE_INSTALL += " \
-    ${CORE_OS} \
+    alsa-lib \
+    alsa-utils \
+    alsa-utils-scripts \
 "
 
 set_local_timezone() {
