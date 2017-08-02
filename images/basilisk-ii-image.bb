@@ -1,11 +1,12 @@
-# Base this image on core-image-minimal
-include recipes-core/images/core-image-minimal.bb
+inherit core-image
 
 SUMMARY = "An image for booting straight to Basilisk II"
 HOMEPAGE = "http://bvarner.github.io"
 LICENSE = "MIT"
 
-IMAGE_FEATUREs += "splash"
+SPLASH="psplash-happymac"
+IMAGE_FEATURES += "splash"
+
 IMAGE_LINGUAS = "en-us"
 
 DISTRO_FEATURES_remove = "opengl"
