@@ -4,13 +4,10 @@ SUMMARY = "An image for booting straight to Basilisk II"
 HOMEPAGE = "http://bvarner.github.io"
 LICENSE = "MIT"
 
-SPLASH="psplash-happymac"
+SPLASH="psplash"
 IMAGE_FEATURES += "splash"
 
 IMAGE_LINGUAS = "en-us"
-
-DISTRO_FEATURES_remove = "opengl"
-DISTRO_FEATURES_remove = "directfb"
 
 #IMAGE_FEATURES += "tools-sdk"
 
@@ -29,6 +26,7 @@ IMAGE_INSTALL += " \
     alsa-lib \
     alsa-utils \
     alsa-utils-scripts \
+    plymouth \
 "
 
 set_local_timezone() {

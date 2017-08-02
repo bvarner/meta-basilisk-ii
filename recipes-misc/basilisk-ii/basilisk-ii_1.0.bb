@@ -15,7 +15,7 @@ DEPENDS = "\
 
 RDEPENDS_${PN} = "\
 	libsdl (>= 1.2) \
-	pulseaudio \
+	alsa-lib \
 "
 
 SRCREV = "${AUTOREV}"

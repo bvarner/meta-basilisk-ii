@@ -7,3 +7,10 @@ DEPENDS += "bcm2835-bootfiles"
 
 # Base this image on basilisk-ii-image
 include basilisk-ii-image.bb
+
+# TODO: add to cmdline.txt
+# logo.nologo fbcon=map:10 splash quiet plymouth.ignore-serial-consoles
+
+# TODO: modprobe snd-bcm2835
+# TODO: dtparam=audio=on in config.txt
+# TODO: disable-splash=1 in config.txt
