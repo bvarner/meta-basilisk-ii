@@ -6,10 +6,11 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  ~/rpi-yocto-builds/poky-morty/meta \
-  ~/rpi-yocto-builds/poky-morty/meta-poky \
-  ~/rpi-yocto-builds/poky-morty/meta-openembedded/meta-oe \
-  ~/rpi-yocto-builds/poky-morty/meta-openembedded/meta-systemd \
-  ~/rpi-yocto-builds/poky-morty/meta-raspberrypi \
-  ~/rpi-yocto-builds/poky-morty/meta-basilisk-ii \
+  ~/yocto-builds/poky-morty/meta \
+  ~/yocto-builds/poky-morty/meta-poky \
+  ~/yocto-builds/poky-morty/meta-openembedded/meta-oe \
+  ~/yocto-builds/poky-morty/meta-openembedded/meta-systemd \
+  ~/yocto-builds/poky-morty/meta-openembedded/meta-initramfs \
+  ~/yocto-builds/poky-morty/meta-raspberrypi \
+  ~/yocto-builds/poky-morty/meta-basilisk-ii \
   "
