@@ -1,3 +1,7 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-CONFFILES_${PN} = "${sysconfdir}/plymouth/plymouthd.conf"
+SRC_URI += "file://plymouth/plymouthd.conf"
+
+do_configure_append() {
+    cp -fp ${WORKDIR}/plymouth/plymouthd.conf ${S}/src/plymouthd.conf;
+}
