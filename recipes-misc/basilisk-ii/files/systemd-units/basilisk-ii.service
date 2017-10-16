@@ -1,0 +1,10 @@
+[Unit]
+Description=BasiliskII
+After=multi-user-.target
+
+[Service]
+Type=simple
+ExecStart=/bin/basilisk-ii.sh
+
+[Install]
+WantedBy=multi-user.target

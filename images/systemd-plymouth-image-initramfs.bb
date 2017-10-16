@@ -1,10 +1,10 @@
 # Simple initramfs image to bring up the hardware and hand off control to systemd
 DESCRIPTION = "A small initramfs that brings up systemd and hands off control rapidly."
 
-PACKAGE_INSTALL = "systemd-initramfs plymouth ${ROOTFS_BOOTSTRAP_INSTALL}"
+PACKAGE_INSTALL = "systemd-initramfs plymouth plymouth-set-default-theme ${ROOTFS_BOOTSTRAP_INSTALL}"
 
 # Do not pollute the initrd image with rootfs features
-SPLASH="psplash"
+SPLASH="plymouth"
 IMAGE_FEATURES = "splash"
 
 export IMAGE_BASENAME = "systemd-plymouth-image-initramfs"

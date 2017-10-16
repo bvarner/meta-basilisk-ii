@@ -14,7 +14,9 @@ MACHINE = "raspberrypi"
 
 # raspberrypi linux kernel settings...
 PREFERRED_VERSION_linux-raspberrypi = "4.9.%"
+
 INITRAMFS_IMAGE_BUNDLE = "1"
+INITRAMFS_IMAGE = "systemd-plymouth-image-initramfs"
 
 # raspberrypi config.txt settings.
 GPU_MEM = "16"
@@ -41,7 +43,6 @@ EXTRA_IMAGE_FEATURES = "debug-tweaks "
 USER_CLASSES = "image-mklibs image-prelink"
 
 PATCHRESOLVE = "noop"
-
 
 # Build Behavior
 # --------------

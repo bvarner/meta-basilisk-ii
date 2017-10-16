@@ -9,6 +9,6 @@ do_deploy_append() {
 	echo "## Force turbo for a stable clock speed" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
 	echo "force_turbo=1" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
     echo "## Setup HDMI Resolution" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
-	echo "hdmi_group=2" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
-	echo "hdmi_mode=14" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+#	echo "hdmi_group=2" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+#	echo "hdmi_mode=14" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
 }

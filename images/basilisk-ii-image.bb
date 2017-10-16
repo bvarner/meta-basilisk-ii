@@ -22,11 +22,11 @@ IMAGE_INSTALL += " \
     unzip \
     zip \
     unzip \
-    basilisk-ii \
     alsa-lib \
     alsa-utils \
     alsa-utils-scripts \
     plymouth \
+    basilisk-ii \
 "
 
 set_local_timezone() {
