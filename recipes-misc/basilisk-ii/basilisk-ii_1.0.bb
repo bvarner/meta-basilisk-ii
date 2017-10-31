@@ -6,6 +6,15 @@ DESCRIPTION = "Basilisk II is an Open Source 68k Macintosh emulator. That is, \
                Basilisk II. "
 HOMEPAGE = "https://basilisk.cebix.net/"
 
+
+
+# NOTES:
+# This recipe sets up a /bin/basilisk-ii.sh shell script, using the env / boot 
+# commands setup by this recipie (so that different machines / arches can set
+# specific options). This shell script is setup to run by a systemd service 
+# when a multi-user target is specified (like, during boot).
+# systemd acts as PID 0, and manages spawning other tasks for us.
+
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
