@@ -17,12 +17,22 @@ SRC_URI += "file://0001-pkgconfig-directfb.patch"
 S = "${WORKDIR}/git"
 
 # If we're on a raspberrypi...
-DEPENDS_raspberrypi_append = " userland npth"
-RDEPENDS_${PN}_raspberrypi_append = " userland npth"
+RPI_DEPS = " userland npth"
+RPI_OECONF = " --enable-video-dispmanx"
+
+DEPENDS_raspberrypi_append = "${RPI_DEPS}"
+RDEPENDS_${PN}_raspberrypi_append = "${RPI_DEPS}"
+EXTRA_OECONF_raspberrypi_append = "${RPI_OECONF}"
+
+DEPENDS_raspberrypi0_append = "${RPI_DEPS}"
+RDEPENDS_${PN}_raspberrypi0_append = "${RPI_DEPS}"
+EXTRA_OECONF_raspberrypi0_append = "${RPI_OECONF}"
+
+DEPENDS_raspberrypi0-wifi_append = "${RPI_DEPS}"
+RDEPENDS_${PN}_raspberrypi0-wifi_append = "${RPI_DEPS}"
+EXTRA_OECONF_raspberrypi0-wifi_append = "${RPI_OECONF}"
+
 
 # Always enable fbcon and disable rpath.
 EXTRA_OECONF_remove = "--disable-video-fbcon"
 EXTRA_OECONF_append = " --disable-rpath --enable-video-fbcon"
-
-# If on a raspberrypi, enable dispmanx!
-EXTRA_OECONF_raspberrypi_append = " --enable-video-dispmanx"

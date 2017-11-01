@@ -47,6 +47,14 @@ SRC_URI_append_raspberrypi = " \
 	file://0001-makefile.patch \
 	file://0002-raspberrypi-gensrc.patch \
 "
+SRC_URI_append_raspberrypi0 = " \
+	file://0001-makefile.patch \
+	file://0002-raspberrypi-gensrc.patch \
+"
+SRC_URI_append_raspberrypi0-wifi = " \
+	file://0001-makefile.patch \
+	file://0002-raspberrypi-gensrc.patch \
+"
 
 PR = "rc1"
 
@@ -74,6 +82,26 @@ BII_CROSS_SIGACTION_NEED_REINSTALL_raspberrypi = "no"
 BII_CROSS_HAVE_EXTENDED_SIGNALS_raspberrypi = "yes" 
 BII_CROSS_SIGSEGV_SKIP_INSTRUCTION_raspberrypi = "yes"
 
+BII_CROSS_SOCKLEN_T_raspberrypi0 = "yes" 
+BII_CROSS_BYTE_BITFIELDS_raspberrypi0 = "yes" 
+BII_CROSS_MMAP_ANON_raspberrypi0 = "yes" 
+BII_CROSS_MMAP_SUPPORTS_MAP_ANONYMOUS_raspberrypi0 = "yes" 
+BII_CROSS_MPROTECT_WORKS_raspberrypi0 = "yes" 
+BII_CROSS_SIGNAL_NEED_REINSTALL_raspberrypi0 = "no" 
+BII_CROSS_SIGACTION_NEED_REINSTALL_raspberrypi0 = "no" 
+BII_CROSS_HAVE_EXTENDED_SIGNALS_raspberrypi0 = "yes" 
+BII_CROSS_SIGSEGV_SKIP_INSTRUCTION_raspberrypi0 = "yes"
+
+BII_CROSS_SOCKLEN_T_raspberrypi0-wifi = "yes" 
+BII_CROSS_BYTE_BITFIELDS_raspberrypi0-wifi = "yes" 
+BII_CROSS_MMAP_ANON_raspberrypi0-wifi = "yes" 
+BII_CROSS_MMAP_SUPPORTS_MAP_ANONYMOUS_raspberrypi0-wifi = "yes" 
+BII_CROSS_MPROTECT_WORKS_raspberrypi0-wifi = "yes" 
+BII_CROSS_SIGNAL_NEED_REINSTALL_raspberrypi0-wifi = "no" 
+BII_CROSS_SIGACTION_NEED_REINSTALL_raspberrypi0-wifi = "no" 
+BII_CROSS_HAVE_EXTENDED_SIGNALS_raspberrypi0-wifi = "yes" 
+BII_CROSS_SIGSEGV_SKIP_INSTRUCTION_raspberrypi0-wifi = "yes"
+
 # And export the values so that OECONF can pick them up.
 export BII_CROSS_SOCKLEN_T
 export BII_CROSS_BYTE_BITFIELDS 
@@ -87,6 +115,8 @@ export BII_CROSS_SIGSEGV_SKIP_INSTRUCTION
 
 EXTRA_OECONF_append = " --without-x --enable-sdl-audio --enable-sdl-video --enable-vosf"
 EXTRA_OECONF_append_raspberrypi = " --disable-jit-compiler"
+EXTRA_OECONF_append_raspberrypi0 = " --disable-jit-compiler"
+EXTRA_OECONF_append_raspberrypi0-wifi = " --disable-jit-compiler"
 
 S = "${WORKDIR}/git/BasiliskII/src/Unix"
 
@@ -94,6 +124,9 @@ BII_BOOT_ENV ?= ""
 BII_BOOT_COMMAND ?= "${bindir}/BasiliskII --config ${sysconfdir}/${PN}/preferences --rom ${sysconfdir}/${PN}/mac.rom --disk ${sysconfdir}/${PN}/mac.hd"
 
 BII_BOOT_ENV_raspberrypi = "export SDL_VIDEODRIVER='dispmanx';"
+BII_BOOT_ENV_raspberrypi0 = "export SDL_VIDEODRIVER='dispmanx';"
+BII_BOOT_ENV_raspberrypi0-wifi = "export SDL_VIDEODRIVER='dispmanx';"
+
 # Uncomment if you don't want to force raspberrypi audio to the headphone jack.
 BII_BOOT_ENV_raspberrypi += "/usr/bin/amixer cset numid=3 1;"
 
